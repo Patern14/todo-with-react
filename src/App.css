@@ -1,18 +1,53 @@
+/* ===========================================================
+  SUMMARY
+
+    Custom properties
+
+    General styling
+
+    Input
+
+    Todo-items
+
+    Select
+=========================================================== */
+
+/* ===========================================================
+  Custom properties
+=========================================================== */
+:root {
+  --dark_blue: #264653;
+  --turquoize: #2a9d8f;
+  --yellow: #e9c46a;
+  --orange: #f4a261;
+  --red: #e76f51;
+  --background_gradient: linear-gradient(120deg, #e9c46a 0%, #f4a261 100%);
+  /* --background_gradient: linear-gradient(120deg, #2a9d8f 0%, #264653 100%); */
+}
+/* ===========================================================
+  Custom properties
+=========================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  /* background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%); */
+  background: var(--background_gradient);
+  /* color: white; */
   color: white;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
 }
 header {
   font-size: 2rem;
+  flex-direction: column;
 }
 
+/* ===========================================================
+  Input
+=========================================================== */
 header,
 form {
   min-height: 20vh;
@@ -28,15 +63,23 @@ form button {
   background: white;
 }
 form button {
-  color: #ff6f47;
+  /* color: #ff6f47;
+  background: #f7fffe; */
+  color: var(--red);
   background: #f7fffe;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 form button:hover {
-  background: #ff6f47;
+  /* background: #ff6f47;
+  color: white; */
+  background: var(--red);
   color: white;
 }
+
+/* ===========================================================
+  Todo-items
+=========================================================== */
 .todo-container {
   display: flex;
   justify-content: center;
@@ -50,6 +93,7 @@ form button:hover {
 
 .todo {
   margin: 0.5rem;
+  /* background: white; */
   background: white;
   font-size: 1.5rem;
   color: black;
@@ -67,14 +111,21 @@ form button:hover {
 
 .trash-btn,
 .complete-btn {
-  background: #ff6f47;
+  /* background: #ff6f47; */
+  background: var(--red);
   color: white;
   border: none;
   padding: 1rem;
   cursor: pointer;
   font-size: 1rem;
 }
+.trash-btn:hover,
+.complete-btn:hover {
+  transform: scale(1.1);
+  
+}
 .complete-btn {
+  /* background: rgb(11, 212, 162); */
   background: rgb(11, 212, 162);
 }
 .todo-item {
@@ -96,6 +147,10 @@ form button:hover {
   opacity: 0.5;
 }
 
+
+/* ===========================================================
+  Select
+=========================================================== */
 /*CUSTOM SELECTOR */
 select {
   -webkit-appearance: none;
@@ -115,10 +170,15 @@ select {
   overflow: hidden;
 }
 select {
-  color: #ff6f47;
+  /* color: #ff6f47; */
+  color: var(--red);
   font-family: "Poppins", sans-serif;
+  font-size: 1rem;
   cursor: pointer;
   width: 12rem;
+}
+select:hover {
+  border: 1px solid var(--red);
 }
 /* Arrow */
 .select::after {
@@ -127,13 +187,10 @@ select {
   top: 0;
   right: 0;
   padding: 1rem;
-  background: #ff6f47;
+  /* background: #ff6f47; */
+  background: var(--red);
   cursor: pointer;
   pointer-events: none;
 }
-/* Transition */
-/*
-.select:hover::after {
-  transform: scale(1.5);
-}
-*/
+
+
